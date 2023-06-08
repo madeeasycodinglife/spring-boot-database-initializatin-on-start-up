@@ -1,0 +1,15 @@
+
+
+just remember this configuration ::
+
+spring:
+  sql:
+    init:
+      mode: always
+      schema-locations:
+        - classpath:/custom-schema.sql
+  jpa:
+    ddl-auto: none
+    defer-datasource-initialization: true
+
+

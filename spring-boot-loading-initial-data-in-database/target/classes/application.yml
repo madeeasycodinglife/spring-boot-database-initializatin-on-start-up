@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: DATABASE-INITIALIZATION-SERVICE
+  datasource:
+    url: jdbc:h2:~/database-initialization
+    driver-class-name: org.h2.Driver
+    username:
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations:
+        - classpath:/custom-script.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
